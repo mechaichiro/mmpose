@@ -299,4 +299,8 @@ def main():
 
 
 if __name__ == '__main__':
+    start_time = time.perf_counter()
     main()
+    end_time = time.perf_counter()
+    elapsed_time_ms = (end_time - start_time) * 1000
+    print(f"elapsed time: {elapsed_time_ms:.3f} ms")

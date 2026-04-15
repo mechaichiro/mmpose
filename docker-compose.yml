@@ -1,0 +1,15 @@
+services:
+  mmpose:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - 'driver': 'nvidia'
+            'capabilities': ['gpu']
+    volumes:
+      - ./mmdet:/mmpose/mmdet
+      - ./app:/mmpose/app
+    command: sleep infinity 
